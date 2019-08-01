@@ -1,0 +1,35 @@
+<ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Noticias</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="cerrar()">Cerrar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+
+    <form [formGroup]="noticia">
+      
+      <ion-item>
+        <ion-label position="floating">Titulo:</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripcion</ion-label>
+        <ion-input formControlName="descripcion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Url(portada)</ion-label>
+        <ion-input formControlName="urlportada"></ion-input>
+      </ion-item>
+        
+      <div class="ion-padding">
+        <ion-button expand="block" class="ion-no-margin" (click)="save(noticia.value)">{{btn_name}}</ion-button>
+      </div>
+
+    </form>
+
+  </ion-content>

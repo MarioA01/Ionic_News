@@ -1,0 +1,46 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Registrar usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="myForm">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Nombre <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="first_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Apellido <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="last_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Email <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Tipo de Usuario</ion-label>
+        <ion-select placeholder="Selecciona uno" formControlName="tipo">
+          <ion-select-option value="1">Lector</ion-select-option>
+          <ion-select-option value="2">Reportero</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" color="primary" type="submit" class="ion-no-margin" (click)="register()">REGISTER</ion-button>
+    </div>
+  </form>
+</ion-content>

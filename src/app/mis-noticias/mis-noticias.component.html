@@ -1,0 +1,19 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>MIS NOTICIAS</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">Volver</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list>
+      <ion-list-header>
+        Mis noticias
+      </ion-list-header>
+        <ion-item  *ngFor="let item of myArray"  (click)="accion(item)">
+          <ion-label> {{item.nombre}} </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

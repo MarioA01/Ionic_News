@@ -1,0 +1,23 @@
+<ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Noticias</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="regresar()">Regresar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content fullscreen>
+      <ion-list>
+          <ion-card >
+              <img src="{{modalUrl}}" />
+              <ion-card-header>
+                <ion-card-subtitle>{{modalDate}}</ion-card-subtitle>
+                <ion-card-title>{{modalNombre}}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                  {{modalDescripcion}}
+              </ion-card-content>
+            </ion-card>
+      </ion-list>
+  </ion-content>

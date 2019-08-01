@@ -1,0 +1,28 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Iniciar sesion</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeWindow()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="myForm">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Email <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" color="primary" type="submit" class="ion-no-margin" (click)="login()">LOGIN</ion-button>
+    </div>
+  </form>
+</ion-content>

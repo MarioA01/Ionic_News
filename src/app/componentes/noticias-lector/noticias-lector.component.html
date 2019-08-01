@@ -1,0 +1,25 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Noticias</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">Cerrar sesion</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list>
+        <ion-card *ngFor="let item of myArray" (click)="details(item)">
+            <img src="{{item.urlportada}}" />
+            <ion-card-header>
+              <ion-card-subtitle>{{item.date_time}}</ion-card-subtitle>
+              <ion-card-title>{{item.nombre}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+    </ion-list>
+    <ion-fab *ngIf="tipo == 2" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" (click)="modalMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+</ion-content> 
